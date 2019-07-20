@@ -16,4 +16,4 @@ spring:
   profiles: test		#测试环境
   application:
     name: microservicecloud-config-myj-test
-# 注意保存为UTF-8格式?
+# ?뱣??ΪUTF-8??ʽ
