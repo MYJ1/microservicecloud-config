@@ -3,7 +3,8 @@ spring:
     active:
     - dev
     
----			#三个-号作分割
+---
+#三个-号作分割
 
 spring:
   profiles: dev		#开发环境
@@ -16,4 +17,4 @@ spring:
   profiles: test		#测试环境
   application:
     name: microservicecloud-config-myj-test
-# ?뱣??ΪUTF-8??ʽ
+# 注意保存为UTF-8格式?

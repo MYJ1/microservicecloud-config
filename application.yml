@@ -3,7 +3,7 @@ spring:
     active:
     - dev
     
----			#三个-号作分割
+---   #三个-号作分割
 
 spring:
   profiles: dev		#开发环境
