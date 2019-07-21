@@ -17,7 +17,7 @@ mybatis:
 spring:
   profiles: dev
   application:        #对外暴露的微服务的名字（eureka中的服务名字）
-    name: microservicecloud-dept-client
+    name: microservicecloud-dept
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource                  #数据库操作类型
     driver-class-name: org.gjt.mm.mysql.Driver                    #mysql驱动包
@@ -34,7 +34,6 @@ spring:
 eureka:
   client:
     service-url:
-    #defaultZone: http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka/               #eureka的地址
   instance:
     instance-id: microservicecloud-dept8001                     #自定义服务名称信息
@@ -60,7 +59,7 @@ mybatis:
 spring:
   profiles: test
   application:        #对外暴露的微服务的名字（eureka中的服务名字）
-    name: microservicecloud-dept-client
+    name: microservicecloud-dept
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource                  #数据库操作类型
     driver-class-name: org.gjt.mm.mysql.Driver                    #mysql驱动包
@@ -77,8 +76,7 @@ spring:
 eureka:
   client:
     service-url:
-    #defaultZone: http://localhost:7002/eureka
-      defaultZone: http://eureka7001.com:7002/eureka/               #eureka的地址
+      defaultZone: http://eureka7002.com:7002/eureka/               #eureka的地址
   instance:
     instance-id: microservicecloud-dept8002                     #自定义服务名称信息
     prefer-ip-address: true                                        #访问路径可以显示ip地址
