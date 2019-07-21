@@ -1,0 +1,89 @@
+spring:
+  profiles:
+    active:
+    - dev
+
+
+---
+
+server:
+  port: 8001
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml               #mybatis配置文件
+  type-aliases-package: com.myj.springCloud.entites               #实体映射文件夹
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                              #sql文件
+
+spring:
+  profile: dev
+  application:        #对外暴露的微服务的名字（eureka中的服务名字）
+    name: microservicecloud-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource                  #数据库操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver                    #mysql驱动包
+    url: jdbc:mysql://192.168.16.129:3306/db_cloud01?characterEncoding=utf-8                    #数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5                                                  #数据库连接池的最小连接数
+      initial-size: 5                                              #初始化连接数
+      max-total: 5                                                 #最大连接数
+      max-wait-millis: 200                                         #超时时间
+
+
+eureka:
+  client:
+    service-url:
+    #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/               #eureka的地址
+  instance:
+    instance-id: microservicecloud-dept8001                     #自定义服务名称信息
+    prefer-ip-address: true                                        #访问路径可以显示ip地址
+info:
+  app.name: myj-microservicecloud
+  company.name: www.myj.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+  
+  
+  
+---
+
+server:
+  port: 8002
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml               #mybatis配置文件
+  type-aliases-package: com.myj.springCloud.entites               #实体映射文件夹
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                              #sql文件
+
+spring:
+  profile: test
+  application:        #对外暴露的微服务的名字（eureka中的服务名字）
+    name: microservicecloud-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource                  #数据库操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver                    #mysql驱动包
+    url: jdbc:mysql://192.168.16.129:3306/db_cloud02?characterEncoding=utf-8                    #数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5                                                  #数据库连接池的最小连接数
+      initial-size: 5                                              #初始化连接数
+      max-total: 5                                                 #最大连接数
+      max-wait-millis: 200                                         #超时时间
+
+
+eureka:
+  client:
+    service-url:
+    #defaultZone: http://localhost:7002/eureka
+      defaultZone: http://eureka7001.com:7002/eureka/               #eureka的地址
+  instance:
+    instance-id: microservicecloud-dept8002                     #自定义服务名称信息
+    prefer-ip-address: true                                        #访问路径可以显示ip地址
+info:
+  app.name: myj-microservicecloud
+  company.name: www.myj.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
