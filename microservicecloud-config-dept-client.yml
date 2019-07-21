@@ -9,36 +9,36 @@ spring:
 server:
   port: 8001
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml               #mybatisÅäÖÃÎÄ¼ş
-  type-aliases-package: com.myj.springCloud.entites               #ÊµÌåÓ³ÉäÎÄ¼ş¼Ğ
+  config-location: classpath:mybatis/mybatis.cfg.xml               #mybatisé…ç½®æ–‡ä»¶
+  type-aliases-package: com.myj.springCloud.entites               #å®ä½“æ˜ å°„æ–‡ä»¶å¤¹
   mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                              #sqlÎÄ¼ş
+  - classpath:mybatis/mapper/**/*.xml                              #sqlæ–‡ä»¶
 
 spring:
-  profile: dev
-  application:        #¶ÔÍâ±©Â¶µÄÎ¢·şÎñµÄÃû×Ö£¨eurekaÖĞµÄ·şÎñÃû×Ö£©
+  profiles: dev
+  application:        #å¯¹å¤–æš´éœ²çš„å¾®æœåŠ¡çš„åå­—ï¼ˆeurekaä¸­çš„æœåŠ¡åå­—ï¼‰
     name: microservicecloud-dept-client
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource                  #Êı¾İ¿â²Ù×÷ÀàĞÍ
-    driver-class-name: org.gjt.mm.mysql.Driver                    #mysqlÇı¶¯°ü
-    url: jdbc:mysql://192.168.16.129:3306/db_cloud01?characterEncoding=utf-8                    #Êı¾İ¿âÃû³Æ
+    type: com.alibaba.druid.pool.DruidDataSource                  #æ•°æ®åº“æ“ä½œç±»å‹
+    driver-class-name: org.gjt.mm.mysql.Driver                    #mysqlé©±åŠ¨åŒ…
+    url: jdbc:mysql://192.168.16.129:3306/db_cloud01?characterEncoding=utf-8                    #æ•°æ®åº“åç§°
     username: root
     password: 123456
     dbcp2:
-      min-idle: 5                                                  #Êı¾İ¿âÁ¬½Ó³ØµÄ×îĞ¡Á¬½ÓÊı
-      initial-size: 5                                              #³õÊ¼»¯Á¬½ÓÊı
-      max-total: 5                                                 #×î´óÁ¬½ÓÊı
-      max-wait-millis: 200                                         #³¬Ê±Ê±¼ä
+      min-idle: 5                                                  #æ•°æ®åº“è¿æ¥æ± çš„æœ€å°è¿æ¥æ•°
+      initial-size: 5                                              #åˆå§‹åŒ–è¿æ¥æ•°
+      max-total: 5                                                 #æœ€å¤§è¿æ¥æ•°
+      max-wait-millis: 200                                         #è¶…æ—¶æ—¶é—´
 
 
 eureka:
   client:
     service-url:
     #defaultZone: http://localhost:7001/eureka
-      defaultZone: http://eureka7001.com:7001/eureka/               #eurekaµÄµØÖ·
+      defaultZone: http://eureka7001.com:7001/eureka/               #eurekaçš„åœ°å€
   instance:
-    instance-id: microservicecloud-dept8001                     #×Ô¶¨Òå·şÎñÃû³ÆĞÅÏ¢
-    prefer-ip-address: true                                        #·ÃÎÊÂ·¾¶¿ÉÒÔÏÔÊ¾ipµØÖ·
+    instance-id: microservicecloud-dept8001                     #è‡ªå®šä¹‰æœåŠ¡åç§°ä¿¡æ¯
+    prefer-ip-address: true                                        #è®¿é—®è·¯å¾„å¯ä»¥æ˜¾ç¤ºipåœ°å€
 info:
   app.name: myj-microservicecloud
   company.name: www.myj.com
@@ -52,36 +52,36 @@ info:
 server:
   port: 8002
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml               #mybatisÅäÖÃÎÄ¼ş
-  type-aliases-package: com.myj.springCloud.entites               #ÊµÌåÓ³ÉäÎÄ¼ş¼Ğ
+  config-location: classpath:mybatis/mybatis.cfg.xml               #mybatisé…ç½®æ–‡ä»¶
+  type-aliases-package: com.myj.springCloud.entites               #å®ä½“æ˜ å°„æ–‡ä»¶å¤¹
   mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                              #sqlÎÄ¼ş
+  - classpath:mybatis/mapper/**/*.xml                              #sqlæ–‡ä»¶
 
 spring:
-  profile: test
-  application:        #¶ÔÍâ±©Â¶µÄÎ¢·şÎñµÄÃû×Ö£¨eurekaÖĞµÄ·şÎñÃû×Ö£©
+  profiles: test
+  application:        #å¯¹å¤–æš´éœ²çš„å¾®æœåŠ¡çš„åå­—ï¼ˆeurekaä¸­çš„æœåŠ¡åå­—ï¼‰
     name: microservicecloud-dept-client
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource                  #Êı¾İ¿â²Ù×÷ÀàĞÍ
-    driver-class-name: org.gjt.mm.mysql.Driver                    #mysqlÇı¶¯°ü
-    url: jdbc:mysql://192.168.16.129:3306/db_cloud02?characterEncoding=utf-8                    #Êı¾İ¿âÃû³Æ
+    type: com.alibaba.druid.pool.DruidDataSource                  #æ•°æ®åº“æ“ä½œç±»å‹
+    driver-class-name: org.gjt.mm.mysql.Driver                    #mysqlé©±åŠ¨åŒ…
+    url: jdbc:mysql://192.168.16.129:3306/db_cloud02?characterEncoding=utf-8                    #æ•°æ®åº“åç§°
     username: root
     password: 123456
     dbcp2:
-      min-idle: 5                                                  #Êı¾İ¿âÁ¬½Ó³ØµÄ×îĞ¡Á¬½ÓÊı
-      initial-size: 5                                              #³õÊ¼»¯Á¬½ÓÊı
-      max-total: 5                                                 #×î´óÁ¬½ÓÊı
-      max-wait-millis: 200                                         #³¬Ê±Ê±¼ä
+      min-idle: 5                                                  #æ•°æ®åº“è¿æ¥æ± çš„æœ€å°è¿æ¥æ•°
+      initial-size: 5                                              #åˆå§‹åŒ–è¿æ¥æ•°
+      max-total: 5                                                 #æœ€å¤§è¿æ¥æ•°
+      max-wait-millis: 200                                         #è¶…æ—¶æ—¶é—´
 
 
 eureka:
   client:
     service-url:
     #defaultZone: http://localhost:7002/eureka
-      defaultZone: http://eureka7001.com:7002/eureka/               #eurekaµÄµØÖ·
+      defaultZone: http://eureka7001.com:7002/eureka/               #eurekaçš„åœ°å€
   instance:
-    instance-id: microservicecloud-dept8002                     #×Ô¶¨Òå·şÎñÃû³ÆĞÅÏ¢
-    prefer-ip-address: true                                        #·ÃÎÊÂ·¾¶¿ÉÒÔÏÔÊ¾ipµØÖ·
+    instance-id: microservicecloud-dept8002                     #è‡ªå®šä¹‰æœåŠ¡åç§°ä¿¡æ¯
+    prefer-ip-address: true                                        #è®¿é—®è·¯å¾„å¯ä»¥æ˜¾ç¤ºipåœ°å€
 info:
   app.name: myj-microservicecloud
   company.name: www.myj.com
